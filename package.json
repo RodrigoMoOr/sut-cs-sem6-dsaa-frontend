@@ -50,6 +50,14 @@
     "prettier": "2.6.2"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts, tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
