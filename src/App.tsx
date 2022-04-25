@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import {Item} from "./components/Item";
+import {Item, ItemProps} from "./components/Item";
+import {Carousel, mockItems} from "./components/Carousel";
 
 function App() {
+
   return (
     <>
-      <Item
-        imageUrl='https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg'
-        text='Rodrigo'
-      />
+      <Carousel items={mockItems} title='Books in this Genre'/>
     </>
   );
 }
