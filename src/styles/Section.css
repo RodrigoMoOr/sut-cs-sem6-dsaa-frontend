@@ -1,0 +1,12 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}

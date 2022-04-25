@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import {Item, ItemProps} from "./components/Item";
-import {Carousel, mockItems} from "./components/Carousel";
+import {Genre} from "./pages/genre";
 
 function App() {
 
   return (
     <>
-      <Carousel items={mockItems} title='Books in this Genre'/>
+      <Genre/>
     </>
   );
 }
