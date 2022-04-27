@@ -1,4 +1,4 @@
-import {Page} from "../components/Page";
+import {Page} from "../components/page";
 import {genrePageMock} from "../mocks/genre-page";
 
 export const Genre = () => {
