@@ -1,7 +1,7 @@
-import {Item, ItemProps} from "./Item";
+import {Item, ItemProps} from "./item";
 import "../styles/Section.css";
 
-export const Section = (props: CarouselProps) => {
+export const Section = (props: SectionProps) => {
   const items: any[] = [];
   props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} text={item.text}/>))
 
@@ -13,7 +13,7 @@ export const Section = (props: CarouselProps) => {
   );
 }
 
-export interface CarouselProps {
+export interface SectionProps {
   title: string;
   items: ItemProps[],
 }

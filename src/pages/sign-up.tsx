@@ -25,7 +25,7 @@ const Copyright = (props: any) => {
   );
 };
 
-export const SignUpComponent = () => {
+export const SignUp = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

@@ -1,4 +1,4 @@
-import {Section, CarouselProps} from "./Section";
+import {Section, SectionProps} from "./section";
 import "../styles/Page.css"
 
 export const Page = (props: PageProps) => {
@@ -19,5 +19,5 @@ export const Page = (props: PageProps) => {
 export interface PageProps {
   title: string;
   description: string;
-  sections: CarouselProps[];
+  sections: SectionProps[];
 }
