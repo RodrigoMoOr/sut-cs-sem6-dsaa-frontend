@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const apiClient = axios.create({
-  baseURL: ''
+  baseURL: 'https://sut-sp-backend.herokuapp.com/api/'
 });
