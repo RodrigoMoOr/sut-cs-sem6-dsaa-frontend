@@ -7,7 +7,7 @@ export default function UserHead()
 {
     return (
         <div className="uHead">
-            <Avatar src={userPageMock.user.imageUrl} />
+            <Avatar sx={{ width: 75, height: 75 }} className="headAv" src={userPageMock.user.imageUrl} alt={`${userPageMock.user.name} ${userPageMock.user.surname}`}/>
             <h1> {userPageMock.user.name} {userPageMock.user.surname}</h1>
         </div>
     )

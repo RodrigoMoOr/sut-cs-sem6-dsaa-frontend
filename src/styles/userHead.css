@@ -1,14 +1,13 @@
 .uHead{
     display: flex;
     justify-content: center;
-    margin: 15px;
-    font-size: 75px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 25pt;
     align-items: center;
+    border-bottom: 1px solid #2c2c2c;
 }
 
-.uHead img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.headAv{
     margin-right: 10px;
 }
