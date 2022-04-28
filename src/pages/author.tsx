@@ -1,0 +1,11 @@
+import {Page} from "../components/Page";
+import {authorPageMock} from "../mocks/author-page";
+
+export const Author = () => {
+
+  return (
+    <>
+      <Page title={authorPageMock.title} description={authorPageMock.description} sections={authorPageMock.sections}/>
+    </>
+  )
+}
