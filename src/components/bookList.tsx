@@ -1,6 +1,6 @@
 import BookInList from "./bookInList";
 import { userPageMock } from "../mocks/user";
-import "././styles/bookList.css";
+import "../styles/bookList.css";
 import React from "react";
 
 export default function BookList() {
