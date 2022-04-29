@@ -16,7 +16,7 @@ export const userPageMock: UserPage = {
         userId: 2137,
         purchases: [
             {
-                id: 5,
+                id: 1,
                 date: "2020-01-01",
                 book: {
                     id: 1,
@@ -24,9 +24,25 @@ export const userPageMock: UserPage = {
                     isbn13: "9780547928203",
                     title: "The Two Towers: Being the Second Part of The Lord of the Rings",
                     imageUrl: "https://images.isbndb.com/covers/82/03/9780547928203.jpg",
-                    author: "J.R.R. Tolkien"
+                    author: "J.R.R. Tolkien",
+                    price: 21.37
+                }
+            },
+
+            {
+                id: 2,
+                date: "2020-01-02",
+                book: {
+                    id: 1,
+                    isbn10: "0547928203",
+                    isbn13: "9780547928203",
+                    title: "The Two Towers: Being the Second Part of The Lord of the Rings",
+                    imageUrl: "https://images.isbndb.com/covers/82/03/9780547928203.jpg",
+                    author: "J.R.R. Tolkien",
+                    price: 21.37
                 }
             }
+            
         ],
         totalValue: 420.69,
         totalPurchases: 5
@@ -58,6 +74,7 @@ export interface Book {
     description?: string;
     imageUrl: string;
     author: string;
+    price: number;
 }
 
 export interface Purchase {

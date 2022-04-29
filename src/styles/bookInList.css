@@ -1,0 +1,9 @@
+.bookInList{
+    display: flex;
+    border-bottom: 1px solid #CCC;
+}
+
+.bookInList img{
+    width: 150px;
+    margin: 5px;
+}

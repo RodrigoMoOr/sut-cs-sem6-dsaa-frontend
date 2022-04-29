@@ -1,13 +1,18 @@
-import { Avatar } from "@mui/material";
+import { Avatar, Grid } from "@mui/material";
 import {userPageMock} from "../mocks/user";
-import "../styles/userBody.css";
+import BookInList from "./bookInList";
+import BookList from "./bookList";
 
 
 export default function UserBody()
 {
     return (
-        <div>
-           <h2>this is body</h2>
+        <div className="mainBody">
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <BookList/>
+                </Grid>
+            </Grid>
         </div>
     )
 }
