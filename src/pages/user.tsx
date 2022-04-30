@@ -1,11 +1,14 @@
 import {userPageMock} from "../mocks/user";
-import UserCont from "../components/userCont";
+import UserBody from "../components/userBody";
+import UserHead from "../components/userHead";
+import "../styles/userPage.css";
 
 export default function User()
 {
     return (
-        <div className="userBckgrnd">
-            <UserCont />
+        <div className="cont">
+            <UserHead />
+            <UserBody />
         </div>
     )
 }
