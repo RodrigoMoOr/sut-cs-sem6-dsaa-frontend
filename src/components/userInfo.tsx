@@ -3,28 +3,29 @@ import "../styles/userInfo.css";
 
 export default function UserInfo() {
     
-    let payText=""
+    let payText1=""
+    let payText2=""
 
     if(userPageMock.paymentMethods.length === 0)
     {
-        payText = "No payment methods added"
+        payText1 = "No payment methods added"
     }
     else
     {
-        payText+="Payment methods: \n"
+        payText1+="Payment methods: \n"
         for(let i=0; i<userPageMock.paymentMethods.length; i++)
         {
-           payText+=(userPageMock.paymentMethods[i].cardBrand)?(userPageMock.paymentMethods[i].cardBrand+" "+ "**** **** **** "+userPageMock.paymentMethods[i].cardNumber?.substring(12,16)):"Uknown payment method"
+           payText2+=(userPageMock.paymentMethods[i].cardBrand)?(userPageMock.paymentMethods[i].cardBrand+" "+ "**** **** **** "+userPageMock.paymentMethods[i].cardNumber?.substring(12,16))+"\n":"Uknown payment method"
         }
     }
 
     return(
         <>
-            <p>User: {userPageMock.user.name} {userPageMock.user.surname}</p>
-            <p>Email: {userPageMock.user.email}</p>
-            <p>Username: {userPageMock.user.username}</p>
-            <p>Number of purchases: {userPageMock.purchaseHistory.purchases.length}</p>
-            <p>{payText}</p>
+            <p><span className="des">User:</span> {userPageMock.user.name} {userPageMock.user.surname}</p>
+            <p><span className="des">Email:</span> {userPageMock.user.email}</p>
+            <p><span className="des">Username:</span> {userPageMock.user.username}</p>
+            <p><span className="des">Number of purchases:</span> {userPageMock.purchaseHistory.purchases.length}</p>
+            <p><span className="des">{payText1}</span>{payText2}</p>
         </>
     )
 }

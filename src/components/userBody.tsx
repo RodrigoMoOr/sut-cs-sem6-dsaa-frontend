@@ -3,6 +3,7 @@ import {userPageMock} from "../mocks/user";
 import BookInList from "./bookInList";
 import BookList from "./bookList";
 import UserInfo from "./userInfo";
+import "../styles/userBody.css"
 
 export default function UserBody()
 {
