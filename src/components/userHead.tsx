@@ -1,4 +1,4 @@
-import { Avatar } from "@mui/material";
+import { Avatar, Card } from "@mui/material";
 import {userPageMock} from "../mocks/user";
 import "../styles/userHead.css";
 
@@ -6,9 +6,11 @@ import "../styles/userHead.css";
 export default function UserHead()
 {
     return (
-        <header className="uHead">
-            <Avatar sx={{ width: 75, height: 75 }} className="headAv" src={userPageMock.user.imageUrl} alt={`${userPageMock.user.name} ${userPageMock.user.surname}`}/>
-            <h1> {userPageMock.user.name} {userPageMock.user.surname}</h1>
-        </header>
+        <Card className="headCard">
+            <header className="uHead">
+                <Avatar sx={{ width: 75, height: 75 }} className="headAv" src={userPageMock.user.imageUrl} alt={`${userPageMock.user.name} ${userPageMock.user.surname}`}/>
+                <h1> {userPageMock.user.name} {userPageMock.user.surname}</h1>
+            </header>
+        </Card>
     )
 }

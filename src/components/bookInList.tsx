@@ -10,7 +10,7 @@ export default function BookInList(props: {book : Book, date : string})
                 <img src={props.book.imageUrl} alt="book" />
             </div>
             <div className="bookInList__info">
-                <h5>{props.book.title}</h5>
+                <h4>{props.book.title}</h4>
                 <p>{props.book.author}</p>
                 <p>{props.book.isbn13}</p>
                 <p>${props.book.price}</p>

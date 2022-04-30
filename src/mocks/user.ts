@@ -31,6 +31,20 @@ export const userPageMock: UserPage = {
 
             {
                 id: 2,
+                date: "2022-11-25",
+                book: {
+                    id: 2,
+                    isbn10: "1101967021",
+                    isbn13: "9781101967027",
+                    title: "Thrawn (Star Wars) (Star Wars: Thrawn)",
+                    imageUrl: "https://images-na.ssl-images-amazon.com/images/I/91SxgwHMc0L.jpg",
+                    author: "Timothy Zahn",
+                    price: 10.00
+                }
+            },
+
+            {
+                id: 3,
                 date: "2020-01-02",
                 book: {
                     id: 1,
@@ -45,12 +59,17 @@ export const userPageMock: UserPage = {
             
         ],
         totalValue: 420.69,
-        totalPurchases: 5
+        totalPurchases: 2
     },
     paymentMethods: [
         {
             id: 5,
-            userId: 2137
+            userId: 2137,
+            cardNumber: "1234123412341234",
+            cardHolder: "Jan Kowalski",
+            cardExpiration: "2020-01-01",
+            cardSecurityCode: "123",
+            cardBrand: "Visa"
         }
     ]
 }
@@ -67,7 +86,7 @@ export interface User {
 
 export interface Book {
     id: number;
-    isbn10: string;
+    isbn10?: string;
     isbn13: string;
     title: string;
     subtitle?: string;
