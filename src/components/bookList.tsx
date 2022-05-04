@@ -8,7 +8,7 @@ export default function BookList() {
     let toReturn = []
     for(let i=0; i<userPageMock.purchaseHistory.purchases.length; i++)
     {
-        toReturn .push (
+        toReturn.push (
         <Card className="bookCard" variant="outlined">
             <CardContent>
                 <BookInList book={userPageMock.purchaseHistory.purchases[i].book} date={userPageMock.purchaseHistory.purchases[i].date}/>
