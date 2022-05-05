@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import {AppRoutes} from "./components/router/AppRoutes";
+import {NavBar} from "./components/navbar/NavBar";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+      <NavBar />
+      <AppRoutes />
   </BrowserRouter>,
   document.getElementById('root')
 );
