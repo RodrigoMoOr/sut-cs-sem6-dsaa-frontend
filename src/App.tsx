@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-import {Genre} from "./pages/Genre";
-import User from "./pages/User";
+import { BrowserRouter as Router } from "react-router-dom";
+import {NavBar} from "./components/NavBar";
+
 
 function App() {
 
   return (
-    <>
-      <User/>
-    </>
+    <Router>
+      <NavBar/>
+
+    </Router>
   );
 }
 

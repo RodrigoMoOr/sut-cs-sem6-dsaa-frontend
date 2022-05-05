@@ -1,4 +1,4 @@
-import { Avatar, Card, CardContent, Grid } from "@mui/material";
+import { Card, CardContent, Grid } from "@mui/material";
 import BookList from "./bookList";
 import UserInfo from "./userInfo";
 import "../styles/userBody.css"
