@@ -1,5 +1,5 @@
 import {Avatar} from "@mui/material";
-import "../styles/Item.css";
+import "../../../styles/Item.css";
 
 export const Item = (props: ItemProps) => {
   return (
