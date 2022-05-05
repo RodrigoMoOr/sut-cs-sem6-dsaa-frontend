@@ -6,9 +6,11 @@ import "../styles/userPage.css";
 export default function User()
 {
     return (
-        <div className="cont">
-            <UserHead />
-            <UserBody />
+        <div className="userPage">
+            <div className="cont">
+                <UserHead />
+                <UserBody />
+            </div>
         </div>
     )
 }

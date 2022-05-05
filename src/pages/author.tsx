@@ -1,4 +1,4 @@
-import {Page} from "../components/Page";
+import {Page} from "../components/page";
 import {authorPageMock} from "../mocks/author-page";
 
 export const Author = () => {
