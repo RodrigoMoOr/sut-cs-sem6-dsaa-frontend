@@ -3,8 +3,8 @@ import {AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Toolti
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 
-const pages = ['Home', 'Library', 'Profile'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Library', 'My Books'];
+const settings = ['Profile', 'Logout'];
 
 export const NavBar = () => {
 

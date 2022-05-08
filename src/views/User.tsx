@@ -1,4 +1,3 @@
-import {userPageMock} from "../mocks/user";
 import UserBody from "../components/userBody";
 import UserHead from "../components/userHead";
 import "../styles/userPage.css";
