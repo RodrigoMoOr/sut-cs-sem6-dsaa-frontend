@@ -65,7 +65,7 @@ export const userPageMock: UserPage = {
     },
     paymentMethods: [
         {
-            id: 5,
+            id: 1,
             userId: 2137,
             cardNumber: "1234123412341234",
             cardHolder: "Jan Kowalski",

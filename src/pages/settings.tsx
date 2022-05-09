@@ -140,10 +140,10 @@ export default function Settings(){
                         </Popup>
                     </div>
                     <div className="item">
-                        <Popup trigger={<Button variant="outlined">Manage payment methods</Button>} modal>
+                        <Popup trigger={<Button variant="outlined">Manage payment methods</Button>} modal closeOnDocumentClick={false}>
                             <Card variant="outlined">
                                 <CardContent>
-                                    <Payments paymentMethods={userPageMock.paymentMethods} user = {userPageMock.user} setData={setUserData}/>
+                                    <Payments paymentMethods={userData.paymentMethods} user = {userData.user} setData={setUserData}/>
                                 </CardContent>
                             </Card>
                         </Popup>

@@ -15,12 +15,15 @@ export default function Payments(props : any) {
         } );
 
     function deletePayment(event : any, id : number) {
-        props.setData((prevData: { payments: any; }) => ({...prevData, payments: prevData.payments.filter((payment: { id: number; }) => payment.id !== id)}));
+        props.setData((prevData: { paymentMethods: any; }) => ({...prevData, paymentMethods: prevData.paymentMethods.filter((payment: { id: number; }) => payment.id !== id)}));
+        console.log(props.paymentMethods);
     }
 
     function addPayment(event : any) {
-        props.setData((prevData: { payments: any; }) => 
-        ({...prevData, payments: [...prevData.payments, {...tempCard, }]}));
+        props.setData((prevData: { paymentMethods: any; }) => 
+        ({...prevData, paymentMethods: [...prevData.paymentMethods, {...tempCard, id:props.paymentMethods.length+1}]}));
+        //when connection to backend is made, this will be replaced with a random id generator and backend call checking if it exists
+        console.log(props.paymentMethods);
     }
 
     function handleChange(event : any) {
@@ -30,7 +33,7 @@ export default function Payments(props : any) {
     
     let payList = props.paymentMethods.map((payment: any) => {
         return (
-            <p>
+            <p key={payment.id}>
                 {payment.cardBrand} **** **** **** {payment.cardNumber.substring(12, 16)}<Button variant="outlined" color="primary" onClick={(event)=>deletePayment(event, payment.id)}>Delete</Button>
             </p>
         )
@@ -38,9 +41,9 @@ export default function Payments(props : any) {
 
     return (
     <>
-    {payList}
+    {(payList!==null)&&payList}
     <br/>
-    <Popup trigger={<Button variant="outlined" color="primary">Add payment method</Button>} modal>
+    <Popup trigger={<Button variant="outlined" color="primary">Add payment method</Button>} modal nested={true} >
         <Card>
             <CardContent>
                 <TextField
