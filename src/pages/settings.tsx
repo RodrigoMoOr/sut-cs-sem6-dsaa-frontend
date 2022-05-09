@@ -27,23 +27,26 @@ export default function Settings(){
     function checkPass() {
         let toReturn = null;
         
-        if(tempPass===userData.user.password){
-            toReturn =  <>
-                            <h1>
-                                Please enter new password
-                            </h1>
-                            <TextField onChange={handleChange} name="password" type="password" variant="standard" />
-                                <Popup trigger={<Button variant="outlined">Save</Button>} modal>
-                                    <Card>
-                                        <CardContent>
-                                            <h1>New password saved </h1>
-                                        </CardContent>
-                                    </Card>
-                                </Popup>
-                        </>
-        }else{
+        // if(tempPass===userData.user.password){
+        //     toReturn =  <>
+        //                     <h1>
+        //                         Please enter new password
+        //                     </h1>
+        //                     <TextField onChange={handleChange} name="password" type="password" variant="standard" />
+        //                         <Popup trigger={<Button variant="outlined">Save</Button>} modal>
+        //                             <Card>
+        //                                 <CardContent>
+        //                                     <h1>New password saved </h1>
+        //                                 </CardContent>
+        //                             </Card>
+        //                         </Popup>
+        //                 </>
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //backend connection here
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // }else{
             toReturn = <h1>Passwords do not match</h1>
-        }
+        // }
 
         return toReturn;
     }
