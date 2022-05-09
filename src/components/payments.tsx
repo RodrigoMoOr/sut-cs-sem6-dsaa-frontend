@@ -16,14 +16,14 @@ export default function Payments(props : any) {
 
     function deletePayment(event : any, id : number) {
         props.setData((prevData: { paymentMethods: any; }) => ({...prevData, paymentMethods: prevData.paymentMethods.filter((payment: { id: number; }) => payment.id !== id)}));
-        console.log(props.paymentMethods);
+        //console.log(props.paymentMethods);
     }
 
     function addPayment(event : any) {
         props.setData((prevData: { paymentMethods: any; }) => 
         ({...prevData, paymentMethods: [...prevData.paymentMethods, {...tempCard, id:props.paymentMethods.length+1}]}));
         //when connection to backend is made, this will be replaced with a random id generator and backend call checking if it exists
-        console.log(props.paymentMethods);
+        //console.log(props.paymentMethods);
     }
 
     function handleChange(event : any) {
