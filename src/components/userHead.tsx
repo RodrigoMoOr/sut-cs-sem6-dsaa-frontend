@@ -1,6 +1,6 @@
 import { Avatar, Card } from "@mui/material";
 import {userPageMock} from "../mocks/user";
-import "../styles/userHead.css";
+import "../styles/UserHead.css";
 
 
 export default function UserHead()

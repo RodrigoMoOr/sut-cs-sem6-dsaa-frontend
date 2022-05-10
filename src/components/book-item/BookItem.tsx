@@ -1,5 +1,5 @@
 import { Book } from "../../mocks/user";
-import "../../styles/bookInList.css";
+import "../../styles/BookList.css";
 
 
 export default function BookItem(props: {book : Book, date : string})

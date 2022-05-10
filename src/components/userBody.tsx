@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import BookList from "./book-list/BookList";
 import UserInfo from "./userInfo";
-import "../styles/userBody.css"
+import "../styles/UserBody.css"
 
 export default function UserBody()
 {
