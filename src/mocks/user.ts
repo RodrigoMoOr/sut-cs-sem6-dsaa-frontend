@@ -1,3 +1,4 @@
+import { Password } from "@mui/icons-material";
 import { PageProps } from "../components/page";
 
 
@@ -8,7 +9,8 @@ export const userPageMock: UserPage = {
         email: "jan.kowalski@gmail.com",
         imageUrl: "https://scontent-waw1-1.xx.fbcdn.net/v/t1.6435-9/84841370_1654798057993543_4745748582143885312_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=174925&_nc_ohc=JCza3Gm0_L8AX9DkN-K&_nc_ht=scontent-waw1-1.xx&oh=00_AT83HGTSnw1KM2P-TZ9vFVNXc4eC5v1byjTcHelckTkCRg&oe=628E97C2",
         userId: 2137,
-        username: "jan.kowalski"
+        username: "jan.kowalski",
+        password: "qwerty"
 
     },
     purchaseHistory: {
@@ -63,7 +65,7 @@ export const userPageMock: UserPage = {
     },
     paymentMethods: [
         {
-            id: 5,
+            id: 1,
             userId: 2137,
             cardNumber: "1234123412341234",
             cardHolder: "Jan Kowalski",
@@ -82,6 +84,7 @@ export interface User {
     username: string;
     imageUrl: string;
     bio?: string;
+    password: string;
 }
 
 export interface Book {
