@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import {PageProps} from "../components/generic/page/Page";
-=======
-import {PageProps} from "../components/page";
->>>>>>> develop
 
 export const authorPageMock: PageProps = {
   title: "Author: Robert Latowiec",
