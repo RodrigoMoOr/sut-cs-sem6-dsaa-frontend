@@ -1,0 +1,67 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../variables.scss';
+
+$border-radius: 1em;
+
+$book-min-height: 20em;
+$book-max-height: 20em;
+$book-min-width: 15em;
+$book-max-width: 20em;
+
+$book-img-width: 10em;
+
+.books-list-item-container {
+  @extend .m-3, .p-2, .d-flex, .flex-column;
+
+  min-height: $book-min-height;
+  min-width: $book-min-width;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.books-list-item {
+  @extend .m-3, .p-2, .d-flex, .flex-column, .align-items-center;
+
+  background-color: $secondary;
+
+  min-height: $book-min-height;
+  min-width: $book-min-width;
+  max-width: $book-max-width;
+
+  border-radius: $border-radius;
+
+  .book-cover {
+    @extend .m-2;
+
+    max-width: $book-img-width;
+    height: auto;
+  }
+
+  .book-title {
+    @extend .mb-1;
+
+    max-width: 95%;
+    font-size: 1.2em;
+    font-weight: 500;
+
+    text-align: center;
+  }
+
+  .book-property {
+    @extend .p-0, .m-0, .px-2;
+
+    max-width: 95%;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-price {
+    @extend .m-2;
+
+    color: $accent;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
