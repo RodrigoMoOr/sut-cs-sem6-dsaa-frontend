@@ -1,5 +1,5 @@
-import {Item, ItemProps} from "./item";
-import "../styles/Section.css";
+import {Item, ItemProps} from "../item/Item";
+import "../../../styles/Section.css";
 
 export const Section = (props: SectionProps) => {
   const items: any[] = [];

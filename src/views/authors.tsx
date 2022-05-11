@@ -1,10 +1,10 @@
-import {Page} from "../components/page";
 import {authorsPageMock} from "../mocks/authors-page";
 import {apiClient} from "../adapters/api-client";
-import {SectionProps} from "../components/section";
-import {ItemProps} from "../components/item";
 import {useEffect, useState} from "react";
-import {Author} from "../authors-reponse.interface";
+import {Author} from "../interfaces/api-responses/authors-page.interface";
+import {ItemProps} from "../components/generic/item/Item";
+import {SectionProps} from "../components/generic/section/Section";
+import {Page} from "../components/generic/page/Page";
 
 export const Authors = () => {
 

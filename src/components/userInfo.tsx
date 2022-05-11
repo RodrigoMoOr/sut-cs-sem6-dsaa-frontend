@@ -1,5 +1,5 @@
 import {userPageMock} from "../mocks/user";
-import "../styles/userInfo.css";
+import "../styles/UserInfo.css";
 
 export default function UserInfo() {
     

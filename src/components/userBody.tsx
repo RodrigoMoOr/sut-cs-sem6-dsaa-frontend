@@ -1,9 +1,7 @@
-import { Avatar, Card, CardContent, Grid } from "@mui/material";
-import {userPageMock} from "../mocks/user";
-import BookInList from "./bookInList";
-import BookList from "./bookList";
+import { Card, CardContent, Grid } from "@mui/material";
+import BookList from "./book-list/BookList";
 import UserInfo from "./userInfo";
-import "../styles/userBody.css"
+import "../styles/UserBody.css"
 
 export default function UserBody()
 {

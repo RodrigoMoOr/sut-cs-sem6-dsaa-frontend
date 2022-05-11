@@ -1,4 +1,4 @@
-import {PageProps} from "../components/page";
+import {PageProps} from "../components/generic/page/Page";
 
 export const genrePageMock: PageProps = {
   title: "Genre: Biographies",

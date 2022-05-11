@@ -1,7 +1,3 @@
-import { Password } from "@mui/icons-material";
-import { PageProps } from "../components/page";
-
-
 export const userPageMock: UserPage = {
     user: {
         name: "Jan",

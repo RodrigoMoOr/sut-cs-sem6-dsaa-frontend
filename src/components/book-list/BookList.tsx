@@ -1,8 +1,8 @@
-import BookInList from "./bookInList";
-import { userPageMock } from "../mocks/user";
+import BookItem from "../book-item/BookItem";
+import { userPageMock } from "../../mocks/user";
 import React from "react";
 import { Card, CardContent } from "@mui/material";
-import "../styles/bookInList.css";
+import "../../styles/BookList.css";
 
 export default function BookList() {
     let toReturn = []
@@ -11,7 +11,7 @@ export default function BookList() {
         toReturn.push (
         <Card className="bookCard" variant="outlined">
             <CardContent>
-                <BookInList book={userPageMock.purchaseHistory.purchases[i].book} date={userPageMock.purchaseHistory.purchases[i].date}/>
+                <BookItem book={userPageMock.purchaseHistory.purchases[i].book} date={userPageMock.purchaseHistory.purchases[i].date}/>
             </CardContent>
         </Card>)
     }

@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, Divider, Stack, TextField } from "@mui/material";
 import Popup from "reactjs-popup";
 import UserHead from "../components/userHead";
-import  "../styles/settings.css"
+import  "../styles/Settings.css"
 import { useState } from "react";
 import {userPageMock} from "../mocks/user";
 import Payments from "../components/payments";

@@ -1,4 +1,4 @@
-import {PageProps} from "../components/page";
+import {PageProps} from "../components/generic/page/Page";
 
 export const authorPageMock: PageProps = {
   title: "Author: Robert Latowiec",
