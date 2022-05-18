@@ -1,9 +1,9 @@
 import {Item, ItemProps} from "../item/Item";
-import "../../../styles/Section.css";
+import "./Section.css";
 
 export const Section = (props: SectionProps) => {
   const items: any[] = [];
-  props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} text={item.text}/>))
+  props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} imageSize={item.imageSize} text1={item.text1} text2={item.text2}/>))
 
   return (
     <div className="section">

@@ -8,29 +8,30 @@ import {Page} from "../components/generic/page/Page";
 
 export const Authors = () => {
 
-  const [authors, setAuthors] = useState<Author[]>([]);
+  // const [authors, setAuthors] = useState<Author[]>([]);
+  //
+  // useEffect(() => {
+  //   apiClient.get('authors').then((response) => setAuthors(response.data))
+  // }, []);
 
-  useEffect(() => {
-    apiClient.get('authors').then((response) => setAuthors(response.data))
-  }, []);
+  // const items: ItemProps[] = [];
+  // authors.forEach(author => {
+  //   const item: ItemProps = {
+  //     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Blanka_Lipi%C5%84ska.JPG/800px-Blanka_Lipi%C5%84ska.JPG',
+  //     imageSize: 120,
+  //     text1: author.name + author.surname,
+  //   }
+  //   items.push(item);
+  // })
 
-  const items: ItemProps[] = [];
-  authors.forEach(author => {
-    const item: ItemProps = {
-      text: author.name + author.surname,
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Blanka_Lipi%C5%84ska.JPG/800px-Blanka_Lipi%C5%84ska.JPG'
-    }
-    items.push(item);
-  })
-
-  const section: SectionProps = {
-    title: 'Authors',
-    items: items,
-  }
+  // const section: SectionProps = {
+  //   title: 'Authors',
+  //   items: items,
+  // }
 
   return (
     <>
-      <Page title={authorsPageMock.title} description={authorsPageMock.description} sections={[section]}/>
+      <Page title={authorsPageMock.title} description={authorsPageMock.description} sections={authorsPageMock.sections}/>
     </>
   )
 }

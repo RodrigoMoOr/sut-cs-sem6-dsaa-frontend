@@ -15,44 +15,50 @@ export const authorsPageMock: PageProps = {
     'voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
   sections: [
     {
-      title: 'Alphabetically Ordered Authors:',
+      title: 'All Authors:',
       items: [
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Rodrigo'
+          imageSize: 120,
+          text1: 'Rodrigo Morales',
+          text2: 'Lanie Wody King'
+        },
+        {
+          imageUrl: 'https://qph.cf2.quoracdn.net/main-qimg-134e3bf89fff27bf56bdbd04e7dbaedf.webp',
+          imageSize: 120,
+          text1: 'Roderyk Morales',
+          text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andres'
+          imageSize: 120,
+          text1: 'Rodrigo Morales',
+          text2: 'Lanie Wody King'
+        },
+        {
+          imageUrl: 'https://this-person-does-not-exist.com/img/avatar-1057db26a1330a28f910707446dd7264.jpg',
+          imageSize: 120,
+          text1: 'Andres Ortiz',
+          text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andrzej'
+          imageSize: 120,
+          text1: 'Mr Hawk',
+          text2: 'Nice guy'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Rodrigo'
+          imageSize: 120,
+          text1: 'Ula',
+          text2: 'No comments'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andres'
+          imageSize: 120,
+          text1: 'Zielu',
+          text2: 'loved by the generations'
         },
-        {
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andrzej'
-        },
-        {
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Rodrigo'
-        },
-        {
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andres'
-        },
-        {
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Andrzej'
-        }
       ]
     },
     {
@@ -60,16 +66,46 @@ export const authorsPageMock: PageProps = {
       items: [
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Monika'
+          imageSize: 120,
+          text1: 'Rodrigo Morales',
+          text2: 'Lanie Wody King'
+        },
+        {
+          imageUrl: 'https://this-person-does-not-exist.com/img/avatar-ed0a92eacc2357048221df678787e30b.jpg',
+          imageSize: 120,
+          text1: 'Roderyk Morales',
+          text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Aleksandra'
+          imageSize: 120,
+          text1: 'Rodrigo Morales',
+          text2: 'Lanie Wody King'
+        },
+        {
+          imageUrl: 'https://this-person-does-not-exist.com/img/avatar-1057db26a1330a28f910707446dd7264.jpg',
+          imageSize: 120,
+          text1: 'Andres Ortiz',
+          text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-          text: 'Magdalena'
-        }
+          imageSize: 120,
+          text1: 'Alice D',
+          text2: 'Lanie Wody Queen'
+        },
+        {
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
+          imageSize: 120,
+          text1: 'Alicia D',
+          text2: 'Lanie Wody Queen'
+        },
+        {
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
+          imageSize: 120,
+          text1: 'Alicja',
+          text2: 'Lanie Wody Queen'
+        },
       ]
     },
   ]
