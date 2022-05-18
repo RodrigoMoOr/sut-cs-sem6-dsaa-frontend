@@ -27,7 +27,7 @@ export const NavBar = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Container>
                 <Toolbar disableGutters>
                     <Typography

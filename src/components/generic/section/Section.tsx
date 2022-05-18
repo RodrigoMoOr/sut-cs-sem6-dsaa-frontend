@@ -1,5 +1,6 @@
 import {Item, ItemProps} from "../item/Item";
 import "./Section.css";
+import {Pagination} from "@mui/material";
 
 export const Section = (props: SectionProps) => {
   const items: any[] = [];
@@ -9,6 +10,7 @@ export const Section = (props: SectionProps) => {
     <div className="section">
       <h2>{props.title}</h2>
       <div className="carousel">{items}</div>
+      <Pagination count={10} variant="outlined" />
     </div>
   );
 }
