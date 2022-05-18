@@ -6,6 +6,7 @@ import User from "../../views/User";
 import {Author} from "../../views/Author";
 import {Genre} from "../../views/Genre";
 import Settings from "../../views/Settings";
+import {Authors} from "../../views/Authors";
 
 export const AppRoutes = () => {
     return (
@@ -13,8 +14,9 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
+        <Route path="authors" element={<Authors />} />
         <Route path="authors/:id" element={<Author />} />
-        <Route path="genre/:id"  element={<Genre />} />
+        <Route path="genres/:id"  element={<Genre />} />
         <Route path="profile" element={<User />} />
         <Route path="profile/settings" element={<Settings />} />
     </Routes>
