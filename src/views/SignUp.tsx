@@ -5,20 +5,21 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
+import {Link as LinkMUI} from '@mui/material';
+import {Grid} from '@mui/material';
+import {Box} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import {Typography} from '@mui/material';
+import {Container} from '@mui/material';
+import {Link} from "react-router-dom";
 
 const Copyright = (props: any) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/RodrigoMoOr">
+      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr">
         The Silesian University of Technology
-      </Link>{' '}
+      </LinkMUI>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -40,7 +41,7 @@ export const SignUp = () => {
       <CssBaseline/>
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 16,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -116,7 +117,7 @@ export const SignUp = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/sign-in" variant="body2">
+              <Link to="/sign-in" style={{ textDecoration: 'none' }}>
                 Already have an account? Sign in
               </Link>
             </Grid>

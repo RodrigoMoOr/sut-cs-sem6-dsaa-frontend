@@ -5,20 +5,21 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {Link as LinkMUI} from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
+import {Link} from "react-router-dom";
 
 const Copyright = (props: any) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/RodrigoMoOr/">
+      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr/">
         The Silesian University of Technology
-      </Link>{' '}
+      </LinkMUI>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -108,12 +109,12 @@ export const SignIn = () => {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <LinkMUI href="#" variant="body2">
                     Forgot password?
-                  </Link>
+                  </LinkMUI>
                 </Grid>
                 <Grid item>
-                  <Link href="/sign-up" variant="body2">
+                  <Link to="/sign-up" style={{ textDecoration: 'none' }}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
