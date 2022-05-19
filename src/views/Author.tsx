@@ -4,8 +4,7 @@ import {authorPageMock} from "../mocks/author-page";
 export const Author = () => {
 
   return (
-    <>
-      <Page title={authorPageMock.title} description={authorPageMock.description} sections={authorPageMock.sections}/>
-    </>
+    <Page imageURL={authorPageMock.imageURL} title={authorPageMock.title} description={authorPageMock.description}
+          sections={authorPageMock.sections}/>
   )
 }

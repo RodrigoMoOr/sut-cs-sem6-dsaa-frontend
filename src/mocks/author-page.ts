@@ -1,6 +1,7 @@
 import {PageProps} from "../components/generic/page/Page";
 
 export const authorPageMock: PageProps = {
+  imageURL: 'https://home.agh.edu.pl/~evermind/images/jrrt001.jpg',
   title: "Author: JJR Tolkien",
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' +
     'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ' +
