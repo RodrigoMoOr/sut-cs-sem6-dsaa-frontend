@@ -21,42 +21,56 @@ export const authorPageMock: PageProps = {
         {
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41FvFVUZLjL._SX328_BO1,204,203,200_.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 1,
           text1: 'The Hobbit',
           text2: 'Lanie Wody description'
         },
         {
           imageUrl: 'https://this-person-does-not-exist.com/img/avatar-ed0a92eacc2357048221df678787e30b.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 2,
           text1: 'Roderyk Morales',
           text2: 'Lanie Wody Kind'
         },
         {
           imageUrl: 'https://cdn.discordapp.com/attachments/948362388166561822/976566811267067975/16529020659115856730126820322554.png',
           imageSize: 160,
+          path: 'books',
+          itemId: 3,
           text1: 'Rodrigo Morales',
           text2: 'Lanie Wody Kind'
         },
         {
           imageUrl: 'https://this-person-does-not-exist.com/img/avatar-1057db26a1330a28f910707446dd7264.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 4,
           text1: 'Andres Ortiz',
           text2: 'Lanie Wody Kind'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 5,
           text1: 'Alice D',
           text2: 'Lanie Wody Queen'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 6,
           text1: 'Alicia D',
           text2: 'Lanie Wody Queen'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 160,
+          path: 'books',
+          itemId: 7,
           text1: 'Alicja',
           text2: 'Lanie Wody Queen'
         },

@@ -20,42 +20,56 @@ export const authorsPageMock: PageProps = {
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 1,
           text1: 'Rodrigo Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://qph.cf2.quoracdn.net/main-qimg-134e3bf89fff27bf56bdbd04e7dbaedf.webp',
           imageSize: 120,
+          path: 'authors',
+          itemId: 2,
           text1: 'Roderyk Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 3,
           text1: 'Rodrigo Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://this-person-does-not-exist.com/img/avatar-1057db26a1330a28f910707446dd7264.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 4,
           text1: 'Andres Ortiz',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 5,
           text1: 'Mr Hawk',
           text2: 'Nice guy'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 6,
           text1: 'Ula',
           text2: 'No comments'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 7,
           text1: 'Zielu',
           text2: 'loved by the generations'
         },
@@ -67,42 +81,56 @@ export const authorsPageMock: PageProps = {
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 8,
           text1: 'Rodrigo Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://this-person-does-not-exist.com/img/avatar-ed0a92eacc2357048221df678787e30b.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 9,
           text1: 'Roderyk Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 10,
           text1: 'Rodrigo Morales',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://this-person-does-not-exist.com/img/avatar-1057db26a1330a28f910707446dd7264.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 11,
           text1: 'Andres Ortiz',
           text2: 'Lanie Wody King'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 12,
           text1: 'Alice D',
           text2: 'Lanie Wody Queen'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 13,
           text1: 'Alicia D',
           text2: 'Lanie Wody Queen'
         },
         {
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
           imageSize: 120,
+          path: 'authors',
+          itemId: 14,
           text1: 'Alicja',
           text2: 'Lanie Wody Queen'
         },
