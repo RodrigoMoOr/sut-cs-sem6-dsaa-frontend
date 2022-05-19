@@ -1,12 +1,13 @@
 import {Avatar, Box, Button, Card, CardActions, CardContent, Grid, Typography} from "@mui/material";
+import {Link} from "react-router-dom";
 
 export const Item = (props: ItemProps) => {
   if (props.text2) {
     return (
       <>
-        <Card sx={{ minWidth: 200, margin: 1 }} variant="outlined" >
+        <Card sx={{minWidth: 200, margin: 1}} variant="outlined">
           <CardContent>
-            <Box sx={{ align_items: 'center' }}>
+            <Box sx={{align_items: 'center'}}>
               {renderAvatar(props.imageUrl, props.imageSize)}
               {renderText(props.text1, "h6")}
               {renderText(props.text2, "body1")}
@@ -14,7 +15,9 @@ export const Item = (props: ItemProps) => {
           </CardContent>
           <CardActions>
             <Button size="small">
-              See More
+              <Link to={`${props.path}/${props.itemId}`}>
+                See More
+              </Link>
             </Button>
           </CardActions>
         </Card>
@@ -23,14 +26,16 @@ export const Item = (props: ItemProps) => {
   }
   return (
     <div className="item">
-      <Card sx={{ minWidth: 200 }}>
+      <Card sx={{minWidth: 200}}>
         <CardContent>
           {renderAvatar(props.imageUrl, props.imageSize)}
           {renderText(props.text1, "h6")}
         </CardContent>
         <CardActions>
           <Button size="small">
-            See More
+            <Link to={`${props.path}/${props.itemId}`}>
+              See More
+            </Link>
           </Button>
         </CardActions>
       </Card>
@@ -46,7 +51,7 @@ const renderAvatar = (imageUrl: string, size: number) => {
 
 const renderText = (text: string, type: "h6" | "body1") => {
   return (
-    <Typography sx={{ textAlign: 'center' }} variant={type} gutterBottom component="div">
+    <Typography sx={{textAlign: 'center'}} variant={type} gutterBottom component="div">
       {text}
     </Typography>
   )
@@ -55,6 +60,8 @@ const renderText = (text: string, type: "h6" | "body1") => {
 export interface ItemProps {
   imageUrl: string;
   imageSize: number;
+  path: string;
+  itemId: number;
   text1: string;
   text2?: string;
 }
