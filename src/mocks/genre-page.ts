@@ -13,7 +13,6 @@ export const genrePageMock: PageProps = {
         {
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41FvFVUZLjL._SX328_BO1,204,203,200_.jpg',
           imageSize: 160,
-          path: 'books',
           itemId: 1,
           text1: 'The Hobbit',
           text2: 'Lanie Wody description'
@@ -21,7 +20,6 @@ export const genrePageMock: PageProps = {
         {
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41FvFVUZLjL._SX328_BO1,204,203,200_.jpg',
           imageSize: 160,
-          path: 'books',
           itemId: 1,
           text1: 'The Hobbit',
           text2: 'Lanie Wody description'
@@ -29,7 +27,6 @@ export const genrePageMock: PageProps = {
         {
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41FvFVUZLjL._SX328_BO1,204,203,200_.jpg',
           imageSize: 160,
-          path: 'books',
           itemId: 1,
           text1: 'The Hobbit',
           text2: 'Lanie Wody description'
@@ -42,7 +39,6 @@ export const genrePageMock: PageProps = {
         {
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/41FvFVUZLjL._SX328_BO1,204,203,200_.jpg',
           imageSize: 160,
-          path: 'books',
           itemId: 1,
           text1: 'The Hobbit',
           text2: 'Lanie Wody description'

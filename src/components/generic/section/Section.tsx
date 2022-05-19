@@ -4,8 +4,8 @@ import {Pagination} from "@mui/material";
 
 export const Section = (props: SectionProps) => {
   const items: any[] = [];
-  props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} imageSize={item.imageSize} text1={item.text1}
-                                               text2={item.text2}/>))
+  props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} imageSize={item.imageSize} itemId={item.itemId}
+                                               text1={item.text1} text2={item.text2}/>))
 
   if (props.pages) {
     return (

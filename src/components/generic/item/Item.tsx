@@ -15,7 +15,7 @@ export const Item = (props: ItemProps) => {
           </CardContent>
           <CardActions>
             <Button size="small">
-              <Link to={`${props.path}/${props.itemId}`}>
+              <Link to={`${props.itemId}`}>
                 See More
               </Link>
             </Button>
@@ -33,7 +33,7 @@ export const Item = (props: ItemProps) => {
         </CardContent>
         <CardActions>
           <Button size="small">
-            <Link to={`${props.path}/${props.itemId}`}>
+            <Link to={`${props.itemId}`}>
               See More
             </Link>
           </Button>
@@ -60,7 +60,6 @@ const renderText = (text: string, type: "h6" | "body1") => {
 export interface ItemProps {
   imageUrl: string;
   imageSize: number;
-  path: string;
   itemId: number;
   text1: string;
   text2?: string;
