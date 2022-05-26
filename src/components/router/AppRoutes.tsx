@@ -7,6 +7,7 @@ import {Author} from "../../views/Author";
 import {Genre} from "../../views/Genre";
 import Settings from "../../views/Settings";
 import {Authors} from "../../views/Authors";
+import LibraryRoot from "../../library-ui/library-root";
 
 export const AppRoutes = () => {
     return (
@@ -14,6 +15,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
+        {/*<Route path="books" element={<LibraryRoot />} />*/}
         <Route path="authors" element={<Authors />} />
         <Route path="authors/:id" element={<Author />} />
         <Route path="genres/:id"  element={<Genre />} />
