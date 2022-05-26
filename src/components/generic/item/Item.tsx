@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 export const Item = (props: ItemProps) => {
   if (props.text2) {
     return (
-      <>
-        <Card sx={{minWidth: 200, margin: 1}} variant="outlined">
+      <div className="item">
+        <Card sx={{width: 200, margin: 1}} variant="outlined">
           <CardContent>
             <Box sx={{align_items: 'center'}}>
               {renderAvatar(props.imageUrl, props.imageSize)}
@@ -21,12 +21,12 @@ export const Item = (props: ItemProps) => {
             </Button>
           </CardActions>
         </Card>
-      </>
+      </div>
     )
   }
   return (
     <div className="item">
-      <Card sx={{minWidth: 200}}>
+      <Card sx={{width: 200, margin: 1}}>
         <CardContent>
           {renderAvatar(props.imageUrl, props.imageSize)}
           {renderText(props.text1, "h6")}
