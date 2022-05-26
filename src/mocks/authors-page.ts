@@ -18,11 +18,11 @@ export const authorsPageMock: PageProps = {
       title: 'All Authors:',
       items: [
         {
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
+          imageUrl: 'https://cdn.discordapp.com/attachments/948988183000006656/978347339179773972/unknown.png',
           imageSize: 120,
           itemId: 1,
-          text1: 'Rodrigo Morales',
-          text2: 'Lanie Wody King'
+          text1: 'Mateusz Wiatrok',
+          text2: 'AKA Infomercial Mateo'
         },
         {
           imageUrl: 'https://qph.cf2.quoracdn.net/main-qimg-134e3bf89fff27bf56bdbd04e7dbaedf.webp',
