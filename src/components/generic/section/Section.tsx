@@ -1,31 +1,54 @@
-import {Item, ItemProps} from "../item/Item";
 import "./Section.css";
-import {Pagination} from "@mui/material";
 
-export const Section = (props: SectionProps) => {
-  const items: any[] = [];
-  props.items.forEach(item => items.push(<Item imageUrl={item.imageUrl} imageSize={item.imageSize} itemId={item.itemId}
-                                               text1={item.text1} text2={item.text2}/>))
+import {useEffect, useState} from "react";
+import {Alert, Box, CircularProgress} from "@mui/material";
+import {IAuthor, isAuthor} from "../../../interfaces/author.interface";
+import {Item} from "../item/Item";
+import {IBook, isBook} from "../../../interfaces/book.interface";
 
-  if (props.pages) {
-    return (
-      <div className="section">
-        <h2>{props.title}</h2>
-        <div className="carousel">{items}</div>
-        <Pagination count={props.pages} variant="outlined"/>
-      </div>
-    );
-  }
+export const Section = <T extends unknown>(props: SectionProps<T>) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const {title, items, loading, error, itemImageSize } = props;
+
+  useEffect(() => {
+    if (isLoading != loading)
+      setIsLoading(loading)
+  }, [loading]);
+
   return (
     <div className="section">
-      <h2>{props.title}</h2>
-      <div className="carousel">{items}</div>
+      <h2>{title}</h2>
+      {isLoading && <Box sx={{display: 'flex'}}><CircularProgress/></Box>}
+      {!isLoading && error && <Box sx={{display: 'flex'}}><Alert severity="error">{error}</Alert></Box>}
+      {!isLoading && !error && items && RenderItems(items, itemImageSize)}
     </div>
   );
 }
 
-export interface SectionProps {
+const RenderItems = (items: unknown, imageSize: number) => {
+  if (Array.isArray(items)) {
+    if (isAuthor(items[0])) {
+      return(
+        <div className="carousel">
+          {items.map((item: IAuthor) => <Item key={item.id} itemId={item.id} imageUrl={item.imageUrl} imageSize={imageSize} text1={`${item.name} ${item.surname}`} />)}
+        </div>
+      )
+    }
+    if(isBook(items[0])) {
+      return (
+        <div className="carousel">
+          {items.map((item: IBook) => <Item imageUrl={item.coverImageURL} imageSize={imageSize} itemId={item.id} text1={item.title} text2={item?.subtitle} />)}
+        </div>
+      )
+    }
+  }
+};
+
+export interface SectionProps<T> {
   title: string;
-  items: ItemProps[],
-  pages?: number;
+  items?: T | null;
+  loading: boolean;
+  error: string | null;
+  itemImageSize: number;
 }

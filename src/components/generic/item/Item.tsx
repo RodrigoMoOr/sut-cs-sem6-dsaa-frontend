@@ -2,34 +2,15 @@ import {Avatar, Box, Button, Card, CardActions, CardContent, Grid, Typography} f
 import {Link} from "react-router-dom";
 
 export const Item = (props: ItemProps) => {
-  if (props.text2) {
-    return (
-      <div className="item">
-        <Card sx={{width: 200, margin: 1}} variant="outlined">
-          <CardContent>
-            <Box sx={{align_items: 'center'}}>
-              {renderAvatar(props.imageUrl, props.imageSize)}
-              {renderText(props.text1, "h6")}
-              {renderText(props.text2, "body1")}
-            </Box>
-          </CardContent>
-          <CardActions>
-            <Button size="small">
-              <Link to={`${props.itemId}`}>
-                See More
-              </Link>
-            </Button>
-          </CardActions>
-        </Card>
-      </div>
-    )
-  }
   return (
     <div className="item">
-      <Card sx={{width: 200, margin: 1}}>
+      <Card sx={{width: 200, margin: 1}} variant="outlined">
         <CardContent>
-          {renderAvatar(props.imageUrl, props.imageSize)}
-          {renderText(props.text1, "h6")}
+          <Box sx={{align_items: 'center'}}>
+            {renderAvatar(props.imageUrl, props.imageSize)}
+            {renderText(props.text1, "h6")}
+            {props.text2 && renderText(props.text2, "body1")}
+          </Box>
         </CardContent>
         <CardActions>
           <Button size="small">
