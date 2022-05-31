@@ -24,6 +24,7 @@ export const authorPageMock: PageProps<IBook[]> = {
       loading: false,
       error: null,
       itemImageSize: 120,
+      itemsPath: 'books',
     },
   ]
 }

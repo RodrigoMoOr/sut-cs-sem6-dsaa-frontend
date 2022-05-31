@@ -15,7 +15,7 @@ export const Page = <T extends unknown>(props: PageProps<T>) => {
         <span className="description">{props.description}</span>
       </header>
       {sections.map((section, index) =>
-        <Section key={index} title={section.title} items={section.items} loading={section.loading} error={section.error} itemImageSize={section.itemImageSize}/>
+        <Section key={index} title={section.title} items={section.items} loading={section.loading} error={section.error} itemImageSize={section.itemImageSize} itemsPath={section.itemsPath}/>
       )}
     </div>
   )

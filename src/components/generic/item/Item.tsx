@@ -14,7 +14,7 @@ export const Item = (props: ItemProps) => {
         </CardContent>
         <CardActions>
           <Button size="small">
-            <Link to={`${props.itemId}`}>
+            <Link to={`/${props.path}/${props.itemId}`}>
               See More
             </Link>
           </Button>
@@ -44,4 +44,5 @@ export interface ItemProps {
   itemId: number;
   text1: string;
   text2?: string;
+  path: string;
 }

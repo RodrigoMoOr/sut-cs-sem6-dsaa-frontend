@@ -5,11 +5,12 @@ import {Alert, Box, CircularProgress} from "@mui/material";
 import {IAuthor, isAuthor} from "../../../interfaces/author.interface";
 import {Item} from "../item/Item";
 import {IBook, isBook} from "../../../interfaces/book.interface";
+import {IGenre, isGenre} from "../../../interfaces/genre.interface";
 
 export const Section = <T extends unknown>(props: SectionProps<T>) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const {title, items, loading, error, itemImageSize } = props;
+  const {title, items, loading, error, itemImageSize, itemsPath } = props;
 
   useEffect(() => {
     if (isLoading != loading)
@@ -21,24 +22,31 @@ export const Section = <T extends unknown>(props: SectionProps<T>) => {
       <h2>{title}</h2>
       {isLoading && <Box sx={{display: 'flex'}}><CircularProgress/></Box>}
       {!isLoading && error && <Box sx={{display: 'flex'}}><Alert severity="error">{error}</Alert></Box>}
-      {!isLoading && !error && items && RenderItems(items, itemImageSize)}
+      {!isLoading && !error && items && RenderItems(items, itemImageSize, itemsPath)}
     </div>
   );
 }
 
-const RenderItems = (items: unknown, imageSize: number) => {
+const RenderItems = (items: unknown, imageSize: number, path: string) => {
   if (Array.isArray(items)) {
+    if (isGenre(items[0])) {
+      return (
+        <div className="carousel">
+          {items.map((item: IGenre) => <Item key={item.id} itemId={item.id} imageUrl={'https://www.filmsite.org/images/drama-genre.jpg'} imageSize={imageSize} text1={`${item.name}`} path={path} />)}
+        </div>
+      )
+    }
     if (isAuthor(items[0])) {
       return(
         <div className="carousel">
-          {items.map((item: IAuthor) => <Item key={item.id} itemId={item.id} imageUrl={item.imageUrl} imageSize={imageSize} text1={`${item.name} ${item.surname}`} />)}
+          {items.map((item: IAuthor) => <Item key={item.id} itemId={item.id} imageUrl={item.imageUrl} imageSize={imageSize} text1={`${item.name} ${item.surname}`} path={path}/>)}
         </div>
       )
     }
     if(isBook(items[0])) {
       return (
         <div className="carousel">
-          {items.map((item: IBook) => <Item imageUrl={item.coverImageURL} imageSize={imageSize} itemId={item.id} text1={item.title} text2={item?.subtitle} />)}
+          {items.map((item: IBook) => <Item imageUrl={item.coverImageURL} imageSize={imageSize} itemId={item.id} text1={item.title} text2={item?.subtitle} path={path} />)}
         </div>
       )
     }
@@ -51,4 +59,5 @@ export interface SectionProps<T> {
   loading: boolean;
   error: string | null;
   itemImageSize: number;
+  itemsPath: string;
 }

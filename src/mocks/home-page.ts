@@ -13,13 +13,15 @@ export const homePageMock: PageProps<IBook[]> = {
       loading: false,
       error: null,
       itemImageSize: 120,
+      itemsPath: 'books',
     },
     {
       title: 'Best Selling Authors',
       items: booksMock,
       loading: false,
       error: null,
-      itemImageSize: 120
+      itemImageSize: 120,
+      itemsPath: 'books',
     }
   ]
 }

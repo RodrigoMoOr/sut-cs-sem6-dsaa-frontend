@@ -15,6 +15,7 @@ export const authorsPageMock: PageProps<IAuthor[]> = {
       itemImageSize: 120,
       loading: false,
       error: null,
+      itemsPath: 'authors',
     },
     {
       title: 'Best Selling Authors:',
@@ -22,6 +23,7 @@ export const authorsPageMock: PageProps<IAuthor[]> = {
       itemImageSize: 120,
       loading: false,
       error: 'boi we aint doing good',
+      itemsPath: 'authors',
     },
     {
       title: 'Loading Authors',
@@ -29,6 +31,7 @@ export const authorsPageMock: PageProps<IAuthor[]> = {
       itemImageSize: 120,
       loading: true,
       error: null,
+      itemsPath: 'authors',
     }
   ]
 }

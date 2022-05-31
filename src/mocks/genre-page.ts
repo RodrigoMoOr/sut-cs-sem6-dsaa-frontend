@@ -14,14 +14,16 @@ export const genrePageMock: PageProps<IBook[]> = {
       items: booksMock,
       loading: false,
       error: null,
-      itemImageSize: 120
+      itemImageSize: 120,
+      itemsPath: 'books',
     },
     {
       title: 'Best-Sellers',
       items: booksMock,
       loading: false,
       error: null,
-      itemImageSize: 120
+      itemImageSize: 120,
+      itemsPath: 'books',
     },
   ]
 }
