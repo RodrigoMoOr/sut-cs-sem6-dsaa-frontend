@@ -3,22 +3,23 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import {Link as LinkMUI} from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import {Link} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
+import {SignInRequest as SignInRequest, SignInResponse} from "../interfaces/sign-in.interface";
+import {apiClient} from "../adapters/api-client";
+import {useEffect, useState} from "react";
 
 const Copyright = (props: any) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr/">
-        The Silesian University of Technology
+      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr/sut-cs-sem6-sp-frontend">
+        In5matix Apes
       </LinkMUI>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -27,15 +28,61 @@ const Copyright = (props: any) => {
 };
 
 export const SignIn = () => {
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
+  // const [response, error, loading, fetchData] = useAxios<ApiResponse<SignInResponse>>({
+  //   axiosInstance: apiClient,
+  //   method: 'POST',
+  //   url: 'auth/sign-in',
+  //   autoExecute: false,
+  // });
+  
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    setIsLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: SignInRequest = {
+      username: formData.get('username')?.toString(),
+      password: formData.get('password')?.toString(),
+    };
+
+    // await fetchData(payload);
+    doSignIn(payload);
   };
+
+  const doSignIn = async (payload: SignInRequest) => {
+    try {
+      const response = await apiClient.post<SignInResponse>(
+        'auth/sign-in',
+        payload,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      const accessToken = response?.data?.accessToken;
+
+      if (accessToken) {
+        localStorage.setItem("accessToken", accessToken);
+        navigate('/home');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log(JSON.stringify(response?.data));
+  //   if (!loading && !error && response?.data?.accessToken) {
+  //     console.log(`API Response: ${JSON.stringify(response?.data)}`);
+  //     localStorage.setItem("accessToken", response.data.accessToken || "");
+  //     navigateToHome();
+  //   }
+  //
+  //   if (loading != isLoading) setIsLoading(loading);
+  // }, [response, error, loading]);
 
   return (
     <>
@@ -74,14 +121,14 @@ export const SignIn = () => {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 1}} >
               <TextField
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
+                id="username"
+                label="username"
+                name="username"
                 autoComplete="email"
                 autoFocus
               />
@@ -95,11 +142,8 @@ export const SignIn = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary"/>}
-                label="Remember me"
-              />
               <Button
+                disabled={isLoading}
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -108,11 +152,11 @@ export const SignIn = () => {
                 Sign In
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <LinkMUI href="#" variant="body2">
-                    Forgot password?
-                  </LinkMUI>
-                </Grid>
+                {/*<Grid item xs>*/}
+                {/*  <LinkMUI href="#" variant="body2">*/}
+                {/*    Forgot password?*/}
+                {/*  </LinkMUI>*/}
+                {/*</Grid>*/}
                 <Grid item>
                   <Link to="/sign-up" style={{ textDecoration: 'none' }}>
                     {"Don't have an account? Sign Up"}

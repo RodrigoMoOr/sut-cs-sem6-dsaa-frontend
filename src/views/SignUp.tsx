@@ -11,14 +11,19 @@ import {Box} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import {Typography} from '@mui/material';
 import {Container} from '@mui/material';
-import {Link} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
+import {SignUpRequest, SignUpResponse} from "../interfaces/sign-up.interface";
+import {useEffect, useState} from "react";
+import {useAxios} from "../hooks/use-axios";
+import {ApiResponse} from "../interfaces/api-response.interface";
+import {apiClient} from "../adapters/api-client";
 
 const Copyright = (props: any) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr">
-        The Silesian University of Technology
+      <LinkMUI color="inherit" href="https://github.com/RodrigoMoOr/sut-cs-sem6-sp-frontend">
+        In5matix Apes
       </LinkMUI>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -27,14 +32,38 @@ const Copyright = (props: any) => {
 };
 
 export const SignUp = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [response, error, loading, fetchData] = useAxios<ApiResponse<SignUpResponse>>({
+    axiosInstance: apiClient,
+    method: 'POST',
+    url: 'auth/sign-up',
+    autoExecute: false,
+  });
+  const navigate = useNavigate();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    setIsLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: SignUpRequest = {
+      name: formData.get('name')?.toString(),
+      surname: formData.get('surname')?.toString(),
+      username: formData.get('username')?.toString(),
+      email: formData.get('username')?.toString(),
+      password: formData.get('password')?.toString(),
+    };
+
+    fetchData(payload)
   };
+
+  useEffect(() => {
+    console.log(`API Response: ${loading} ${error} ${response?.data}`);
+    if (!loading && !error && response?.data?.id) {
+      navigate('/sign-in');
+    }
+    if (loading != isLoading) setIsLoading(loading);
+  }, [response, error, loading]);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -61,11 +90,11 @@ export const SignUp = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="given-name"
-                name="firstName"
+                name="name"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="name"
+                label="Name"
                 autoFocus
               />
             </Grid>
@@ -73,9 +102,9 @@ export const SignUp = () => {
               <TextField
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
+                id="surname"
+                label="Surname"
+                name="surname"
                 autoComplete="family-name"
               />
             </Grid>
@@ -83,9 +112,9 @@ export const SignUp = () => {
               <TextField
                 required
                 fullWidth
-                id="email"
+                id="username"
                 label="Email Address"
-                name="email"
+                name="username"
                 autoComplete="email"
               />
             </Grid>
@@ -108,6 +137,7 @@ export const SignUp = () => {
             </Grid>
           </Grid>
           <Button
+            disabled={isLoading}
             type="submit"
             fullWidth
             variant="contained"

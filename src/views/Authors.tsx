@@ -1,5 +1,5 @@
 import {apiClient} from "../adapters/api-client";
-import {useAxios} from "../hooks/axios-hooks";
+import {useAxios} from "../hooks/use-axios";
 import {IAuthor} from "../interfaces/author.interface";
 import {SectionProps} from "../components/generic/section/Section";
 import {Page} from "../components/generic/page/Page";
@@ -11,12 +11,14 @@ export const Authors = () => {
     axiosInstance: apiClient,
     method: 'GET',
     url: 'authors',
+    autoExecute: true,
   });
 
   const [response2, error2, loading2] = useAxios<ApiResponse<IAuthor[]>>({
     axiosInstance: apiClient,
     method: 'GET',
     url: 'authors',
+    autoExecute: true,
     requestConfig: {
       sortBy: 'popular',
       order: 'asc',
@@ -27,6 +29,7 @@ export const Authors = () => {
     axiosInstance: apiClient,
     method: 'GET',
     url: 'authors',
+    autoExecute: true,
     requestConfig: {
       sortBy: 'best-seller',
       order: 'asc',
@@ -35,7 +38,7 @@ export const Authors = () => {
 
   const section1: SectionProps<IAuthor[]> = {
     title: 'All Authors',
-    items: response1?.items,
+    items: response1?.data,
     loading: loading1,
     error: error1,
     itemImageSize: 120,
@@ -44,7 +47,7 @@ export const Authors = () => {
 
   const section2: SectionProps<IAuthor[]> = {
     title: 'Popular Authors',
-    items: response2?.items,
+    items: response2?.data,
     loading: loading2,
     error: error2,
     itemImageSize: 120,
@@ -53,7 +56,7 @@ export const Authors = () => {
 
   const section3: SectionProps<IAuthor[]> = {
     title: 'Best Selling Authors',
-    items: response3?.items,
+    items: response3?.data,
     loading: loading3,
     error: error3,
     itemImageSize: 120,

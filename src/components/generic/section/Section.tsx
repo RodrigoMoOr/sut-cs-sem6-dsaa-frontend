@@ -3,7 +3,7 @@ import "./Section.css";
 import {useEffect, useState} from "react";
 import {Alert, Box, CircularProgress} from "@mui/material";
 import {IAuthor, isAuthor} from "../../../interfaces/author.interface";
-import {Item} from "../item/Item";
+import {SectionItem} from "../section-item/SectionItem";
 import {IBook, isBook} from "../../../interfaces/book.interface";
 import {IGenre, isGenre} from "../../../interfaces/genre.interface";
 
@@ -14,7 +14,7 @@ export const Section = <T extends unknown>(props: SectionProps<T>) => {
 
   useEffect(() => {
     if (isLoading != loading)
-      setIsLoading(loading)
+      setIsLoading(loading);
   }, [loading]);
 
   return (
@@ -32,21 +32,21 @@ const RenderItems = (items: unknown, imageSize: number, path: string) => {
     if (isGenre(items[0])) {
       return (
         <div className="carousel">
-          {items.map((item: IGenre) => <Item key={item.id} itemId={item.id} imageUrl={'https://www.filmsite.org/images/drama-genre.jpg'} imageSize={imageSize} text1={`${item.name}`} path={path} />)}
+          {items.map((item: IGenre) => <SectionItem key={item.id} itemId={item.id} imageUrl={'https://www.filmsite.org/images/drama-genre.jpg'} imageSize={imageSize} text1={`${item.name}`} path={path} />)}
         </div>
       )
     }
     if (isAuthor(items[0])) {
       return(
         <div className="carousel">
-          {items.map((item: IAuthor) => <Item key={item.id} itemId={item.id} imageUrl={item.imageUrl} imageSize={imageSize} text1={`${item.name} ${item.surname}`} path={path}/>)}
+          {items.map((item: IAuthor) => <SectionItem key={item.id} itemId={item.id} imageUrl={item.imageUrl} imageSize={imageSize} text1={`${item.name} ${item.surname}`} path={path}/>)}
         </div>
       )
     }
     if(isBook(items[0])) {
       return (
         <div className="carousel">
-          {items.map((item: IBook) => <Item imageUrl={item.coverImageURL} imageSize={imageSize} itemId={item.id} text1={item.title} text2={item?.subtitle} path={path} />)}
+          {items.map((item: IBook) => <SectionItem imageUrl={item.coverImageUrl} imageSize={imageSize} itemId={item.id} text1={item.title} text2={item?.subtitle} path={path} />)}
         </div>
       )
     }

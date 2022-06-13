@@ -2,8 +2,8 @@ export interface IBook {
   id: number;
   title: string;
   subtitle: string;
-  description: string;
-  coverImageURL: string;
+  coverImageUrl: string;
+  publisher: string;
 }
 
 export const isBook = (obj: any): obj is IBook => {

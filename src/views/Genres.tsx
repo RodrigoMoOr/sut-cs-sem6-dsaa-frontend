@@ -1,4 +1,4 @@
-import {useAxios} from "../hooks/axios-hooks";
+import {useAxios} from "../hooks/use-axios";
 import {ApiResponse} from "../interfaces/api-response.interface";
 import {IGenre} from "../interfaces/genre.interface";
 import {apiClient} from "../adapters/api-client";
@@ -11,11 +11,12 @@ export const Genres = () => {
     axiosInstance: apiClient,
     method: 'GET',
     url: 'genres',
+    autoExecute: true,
   });
 
   const section: SectionProps<IGenre[]> = {
     title: 'All Genres',
-    items: response?.items,
+    items: response?.data,
     loading,
     error,
     itemImageSize: 120,

@@ -1,7 +1,7 @@
 import {Avatar, Box, Button, Card, CardActions, CardContent, Grid, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 
-export const Item = (props: ItemProps) => {
+export const SectionItem = (props: SectionItemProps) => {
   return (
     <div className="item">
       <Card sx={{width: 200, margin: 1}} variant="outlined">
@@ -38,7 +38,7 @@ const renderText = (text: string, type: "h6" | "body1") => {
   )
 }
 
-export interface ItemProps {
+export interface SectionItemProps {
   imageUrl: string;
   imageSize: number;
   itemId: number;
