@@ -3,7 +3,7 @@ export const userPageMock: UserPage = {
         name: "Jan",
         surname: "Kowalski",
         email: "jan.kowalski@gmail.com",
-        imageUrl: "https://scontent-waw1-1.xx.fbcdn.net/v/t1.6435-9/84841370_1654798057993543_4745748582143885312_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=174925&_nc_ohc=JCza3Gm0_L8AX9DkN-K&_nc_ht=scontent-waw1-1.xx&oh=00_AT83HGTSnw1KM2P-TZ9vFVNXc4eC5v1byjTcHelckTkCRg&oe=628E97C2",
+        imageUrl: "https://www.thispersondoesnotexist.com/image",
         userId: 2137,
         username: "jan.kowalski",
         password: "qwerty"
