@@ -1,10 +1,10 @@
-import {apiClient} from "../adapters/api-client";
-import {useAxios} from "../hooks/use-axios";
-import {IAuthor} from "../interfaces/author.interface";
-import {SectionProps} from "../components/generic/section/Section";
-import {Page} from "../components/generic/page/Page";
-import {authorsPageMock} from "../mocks/authors-page";
-import {ApiResponse} from "../interfaces/api-response.interface";
+import {apiClient} from '../adapters/api-client'
+import {useAxios} from '../hooks/use-axios'
+import {IAuthor} from '../interfaces/author.interface'
+import {SectionProps} from '../components/generic/section/Section'
+import {Page} from '../components/generic/page/Page'
+import {authorsPageMock} from '../mocks/authors-page'
+import {ApiResponse} from '../interfaces/api-response.interface'
 
 export const Authors = () => {
   const [response1, error1, loading1] = useAxios<ApiResponse<IAuthor[]>>({
@@ -12,7 +12,7 @@ export const Authors = () => {
     method: 'GET',
     url: 'authors',
     autoExecute: true,
-  });
+  })
 
   const [response2, error2, loading2] = useAxios<ApiResponse<IAuthor[]>>({
     axiosInstance: apiClient,
@@ -20,10 +20,10 @@ export const Authors = () => {
     url: 'authors',
     autoExecute: true,
     requestConfig: {
-      sortBy: 'popular',
-      order: 'asc',
+      sortBy: 'is_popular',
+      order: 'DESC',
     },
-  });
+  })
 
   const [response3, error3, loading3] = useAxios<ApiResponse<IAuthor[]>>({
     axiosInstance: apiClient,
@@ -31,10 +31,10 @@ export const Authors = () => {
     url: 'authors',
     autoExecute: true,
     requestConfig: {
-      sortBy: 'best-seller',
-      order: 'asc',
+      sortBy: 'is_best-seller',
+      order: 'DESC',
     },
-  });
+  })
 
   const section1: SectionProps<IAuthor[]> = {
     title: 'All Authors',
@@ -64,6 +64,10 @@ export const Authors = () => {
   }
 
   return (
-    <Page title={authorsPageMock.title} description={authorsPageMock.description} sections={[section1, section2, section3]}/>
+    <Page
+      title={authorsPageMock.title}
+      description={authorsPageMock.description}
+      sections={[section1, section2, section3]}
+    />
   )
 }
